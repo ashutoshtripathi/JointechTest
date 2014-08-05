@@ -8,7 +8,20 @@ package com.algo;
 
 public class CreditCardValidator {
 	
-    public boolean validate(String input) {
-    	return false;
+    public String validate(String input) {
+    	
+    	CardStatus status = isValidCardNumber(input);
+    	if(status != CardStatus.VALID){
+    		return status.getCode();
+    	}
+    	
+    	//TODO: Write logic here
+		return isValidCardNumber(input).getCode();
+    }
+    
+    
+    private CardStatus isValidCardNumber(String cardNumber){
+    	//TODO:
+    	return CardStatus.INVALID;
     }
 }
