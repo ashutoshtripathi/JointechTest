@@ -1,10 +1,12 @@
 apply plugin: 'java'
 apply plugin: 'idea'
 
+sourceCompatibility = 1.6
+
 sourceSets {
     behavior {
         java {
-            srcDir 'src/behavior/java'
+            srcDir 'src'
         }
         resources {
             srcDir 'src/behavior/resources'
@@ -16,8 +18,75 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit',  version: '4.+'
-    testCompile group: 'commons-lang', name: 'commons-lang', version: '2.5'
-}
+configurations { jbehave }
 
+dependencies {
+	
+ 
+	testCompile (
+			[group: 'junit', name: 'junit', version: '4.+'],
+			[group: 'log4j', name: 'log4j', version: '1.2.17'],
+			[group: 'org.freemarker', name: 'freemarker', version: '2.3.20'],
+			[group: 'commons-lang', name: 'commons-lang', version: '2.6'],
+			[group: 'commons-io', name: 'commons-io', version: '2.4'],
+			[group: 'com.thoughtworks.paranamer', name: 'paranamer', version: '2.4'],
+			[group: 'org.apache.commons', name: 'commons-lang3', version: '3.3.2'],
+			[group: 'commons-collections', name: 'commons-collections', version: '3.2.1'],
+			[group: 'org.jbehave', name: 'jbehave-core', version: '4.0-beta-9'],
+			[group: 'de.codecentric', name: 'jbehave-junit-runner', version: '1.1.2'],
+			)
+	
+			testRuntime (
+			[group: 'junit', name: 'junit', version: '4.+'],
+			[group: 'log4j', name: 'log4j', version: '1.2.17'],
+			[group: 'org.freemarker', name: 'freemarker', version: '2.3.20'],
+			[group: 'commons-lang', name: 'commons-lang', version: '2.6'],
+			[group: 'commons-io', name: 'commons-io', version: '2.4'],
+			[group: 'com.thoughtworks.paranamer', name: 'paranamer', version: '2.4'],
+			[group: 'org.apache.commons', name: 'commons-lang3', version: '3.3.2'],
+			[group: 'commons-collections', name: 'commons-collections', version: '3.2.1'],
+			[group: 'org.jbehave', name: 'jbehave-core', version: '4.0-beta-9'],
+			[group: 'de.codecentric', name: 'jbehave-junit-runner', version: '1.1.2'],
+			)
+			
+			compile (
+			[group: 'junit', name: 'junit', version: '4.+'],
+			[group: 'log4j', name: 'log4j', version: '1.2.17'],
+			[group: 'org.freemarker', name: 'freemarker', version: '2.3.20'],
+			[group: 'commons-lang', name: 'commons-lang', version: '2.6'],
+			[group: 'commons-io', name: 'commons-io', version: '2.4'],
+			[group: 'com.thoughtworks.paranamer', name: 'paranamer', version: '2.4'],
+			[group: 'org.apache.commons', name: 'commons-lang3', version: '3.3.2'],
+			[group: 'commons-collections', name: 'commons-collections', version: '3.2.1'],
+			[group: 'org.jbehave', name: 'jbehave-core', version: '4.0-beta-9'],
+			[group: 'de.codecentric', name: 'jbehave-junit-runner', version: '1.1.2'],
+			)
+			
+			jbehave (
+			[group: 'junit', name: 'junit', version: '4.+'],
+			[group: 'log4j', name: 'log4j', version: '1.2.17'],
+			[group: 'org.freemarker', name: 'freemarker', version: '2.3.20'],
+			[group: 'commons-lang', name: 'commons-lang', version: '2.6'],
+			[group: 'commons-io', name: 'commons-io', version: '2.4'],
+			[group: 'com.thoughtworks.paranamer', name: 'paranamer', version: '2.4'],
+			[group: 'org.apache.commons', name: 'commons-lang3', version: '3.3.2'],
+			[group: 'commons-collections', name: 'commons-collections', version: '3.2.1'],
+			[group: 'org.jbehave', name: 'jbehave-core', version: '4.0-beta-9'],
+			[group: 'de.codecentric', name: 'jbehave-junit-runner', version: '1.1.2'],
+			)
+			
+			
+			behaviorCompile (
+			[group: 'junit', name: 'junit', version: '4.+'],
+			[group: 'log4j', name: 'log4j', version: '1.2.17'],
+			[group: 'org.freemarker', name: 'freemarker', version: '2.3.20'],
+			[group: 'commons-lang', name: 'commons-lang', version: '2.6'],
+			[group: 'commons-io', name: 'commons-io', version: '2.4'],
+			[group: 'com.thoughtworks.paranamer', name: 'paranamer', version: '2.4'],
+			[group: 'org.apache.commons', name: 'commons-lang3', version: '3.3.2'],
+			[group: 'commons-collections', name: 'commons-collections', version: '3.2.1'],
+			[group: 'org.jbehave', name: 'jbehave-core', version: '4.0-beta-9'],
+			[group: 'de.codecentric', name: 'jbehave-junit-runner', version: '1.1.2'],
+			)
+			
+   }

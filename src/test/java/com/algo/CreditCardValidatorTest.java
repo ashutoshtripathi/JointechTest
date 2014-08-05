@@ -1,5 +1,5 @@
 package com.algo;
-import junit.framework.Assert;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -17,14 +17,14 @@ public class CreditCardValidatorTest {
     @Test
     public void shouldPassValidNumber() {
     	
-        Assert.assertEquals("0 is not a accetable card number", "invalidFormat", validator.validate("0"));
-        Assert.assertEquals("1234 is not a accetable card number","invalidFormat", validator.validate("1234"));
-        Assert.assertEquals("abcd is not a accetable card number","alphaError", validator.validate("abcd"));
-        Assert.assertEquals("4525555544445555 must be valid card number","valid", validator.validate("4525555544445555"));
-        Assert.assertEquals("4525555544445577 is invalid card number","invalid", validator.validate("4525555544445577"));
-        Assert.assertEquals("Card must be of 16 digits only", "invalidFormat", validator.validate("452555554444557712212121"));
-        Assert.assertEquals("1234-5678-9012-3452 must be valid card number","valid", validator.validate("1234-5678-9012-3452"));
-        Assert.assertEquals("1234 5678 9012 3452 must be valid card number","valid", validator.validate("1234 5678 9012 3452"));
+        assertEquals("0 is not a accetable card number", CardStatus.INVALIDFORMAT.getCode(), validator.validate("0"));
+        assertEquals("1234 is not a accetable card number",CardStatus.INVALIDFORMAT.getCode(), validator.validate("1234"));
+        assertEquals("abcd is not a accetable card number",CardStatus.ALPHAERROR.getCode(), validator.validate("abcd"));
+        assertEquals("4525555544445555 must be valid card number",CardStatus.VALID.getCode(), validator.validate("4525555544445555"));
+        assertEquals("4525555544445577 is invalid card number",CardStatus.INVALID.getCode(), validator.validate("4525555544445577"));
+        assertEquals("Card must be of 16 digits only", CardStatus.INVALIDFORMAT.getCode(), validator.validate("452555554444557712212121"));
+        assertEquals("1234-5678-9012-3452 must be valid card number",CardStatus.VALID.getCode(), validator.validate("1234-5678-9012-3452"));
+        assertEquals("1234 5678 9012 3452 must be valid card number",CardStatus.VALID.getCode(), validator.validate("1234 5678 9012 3452"));
     }
 
 }
