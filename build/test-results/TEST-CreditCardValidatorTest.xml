@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CreditCardValidatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2014-08-05T04:44:57" hostname="WLW7-ASHUTOSHTRIPATHI" time="0.0020">
+  <properties/>
+  <testcase name="shouldPassValidNumber" classname="CreditCardValidatorTest" time="0.0020"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
