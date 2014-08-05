@@ -3,7 +3,7 @@ package com.algo;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * 
+ * Card Validator can be used by calling {@link #validate(cardNumber)}
  * @author Ashutosh.Tripathi
  * @date Aug 5, 2014
  */

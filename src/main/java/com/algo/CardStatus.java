@@ -1,5 +1,10 @@
 package com.algo;
 
+/**
+ * Enum for Various states of card
+ * @author Ashutosh.Tripathi
+ * @date Aug 5, 2014
+ */
 public enum CardStatus {
 
 	//Here we can enter keys for message translation
